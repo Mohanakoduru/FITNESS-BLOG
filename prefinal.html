@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FIT & FIERCE</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* ----------------------------------
+       KEYFRAME ANIMATIONS
+    ------------------------------------- */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ----------------------------------
+       BASE STYLES
+    ------------------------------------- */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      background: url('https://2494739.fs1.hubspotusercontent-na1.net/hub/2494739/hubfs/recovery-techniques-for-athletes.jpg?width=723&name=recovery-techniques-for-athletes.jpg') no-repeat center center fixed;
+      background-size: cover;
+      /* Animate body on load */
+      animation: fadeIn 1s ease-out;
+    }
+    
+    header {
+      background: rgba(51, 51, 51, 0.8);
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    nav ul li {
+      display: inline;
+      margin: 0 1rem;
+    }
+    
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s;
+    }
+    
+    nav ul li a:hover {
+      transform: scale(1.1);
+      color: #ffd700;
+    }
+    
+    main {
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 1200px;
+      animation: fadeIn 1s ease-out;
+    }
+    
+    /* ----------------------------------
+       HERO SECTION
+    ------------------------------------- */
+    #hero .hero {
+      background: url('https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+      position: relative;
+      animation: fadeIn 1s ease-out;
+    }
+    
+    #hero .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+    
+    #hero .hero-content {
+      position: relative;
+      z-index: 2;
+      animation: fadeIn 1s ease-out;
+    }
+    
+    #hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    
+    #hero button {
+      padding: 1rem 2rem;
+      background: #ffd700;
+      border: none;
+      color: #333;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: transform 0.3s;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    #hero button:hover {
+      transform: scale(1.05);
+      background: #fff;
+    }
+    
+    /* ----------------------------------
+       ABOUT SECTION
+    ------------------------------------- */
+    #about {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    #about h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ffd700;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+    
+    /* ----------------------------------
+       POSTS & CATEGORIES
+    ------------------------------------- */
+    .posts,
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    .post,
+    .category,
+    .tips {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      flex: 1 1 30%;
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    .post img,
+    .category img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    
+    .post h3,
+    .category h3 {
+      margin-top: 0.5rem;
+    }
+    
+    .post p,
+    .category p {
+      font-size: 0.9rem;
+    }
+    
+    .post button,
+    .category button {
+      padding: 0.5rem 1rem;
+      background: #ffd700;
+      border: none;
+      color: #333;
+      cursor: pointer;
+      transition: transform 0.3s;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .post button:hover,
+    .category button:hover {
+      transform: scale(1.05);
+      background: #fff;
+    }
+    
+    /* ----------------------------------
+       FITNESS TIPS SECTION
+    ------------------------------------- */
+    #tips {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    #tips h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ffd700;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+    
+    /* ----------------------------------
+       HIDDEN NEWSLETTER & TESTIMONIALS
+    ------------------------------------- */
+    #newsletter,
+    #testimonials {
+      display: none;
+    }
+    
+    /* ----------------------------------
+       TOGGLE BANNER FOR EXTERNAL WINDOWS
+    ------------------------------------- */
+    #toggleModal {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 1rem;
+      z-index: 2000;
+    }
+    
+    #toggleModal button {
+      padding: 0.8rem 1.5rem;
+      background: #ffd700;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+      transition: transform 0.3s;
+    }
+    
+    #toggleModal button:hover {
+      transform: scale(1.05);
+      background: #fff;
+    }
+    
+    /* ----------------------------------
+       INLINE OVERLAY SECTIONS
+       (Fitness Plans, Diet Guides, Success Stories, Contact)
+    ------------------------------------- */
+    #fitnessPlansSection,
+    #dietGuidesSection,
+    #successStoriesSection,
+    #contactSection {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #333;
+      overflow-y: auto;
+      z-index: 3000;
+      padding: 20px;
+      animation: fadeIn 0.7s ease-out;
+    }
+    
+    #fitnessPlansSection h1,
+    #dietGuidesSection h1,
+    #successStoriesSection h1,
+    #contactSection h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    /* Shared Plan Styling */
+    .plan {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #ffd700;
+      padding-bottom: 1rem;
+      animation: fadeIn 0.5s ease-out;
+    }
+    
+    .plan:last-child {
+      border-bottom: none;
+    }
+    
+    .plan h2 {
+      margin-top: 1rem;
+    }
+    
+    .plan h3 {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+    
+    .plan ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .plan li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .plan p {
+      margin: 0.5rem 0;
+    }
+    
+    .plan strong {
+      color: #ffd700;
+    }
+    
+    /* Media Container for Plans */
+    .plan .plan-media {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    
+    .plan:nth-child(even) .plan-media {
+      flex-direction: row-reverse;
+    }
+    
+    .plan .plan-media img,
+    .plan .plan-media iframe {
+      transition: transform 0.3s ease;
+      will-change: transform;
+    }
+    
+    .plan .plan-media:hover img {
+      transform: scale(1.05) rotate(1deg);
+    }
+    
+    .plan .plan-media:hover iframe {
+      transform: scale(1.05) rotate(-1deg);
+    }
+    
+    .return-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 0.8rem 1.5rem;
+      background: #ffd700;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+      transition: transform 0.3s;
+    }
+    
+    .return-btn:hover {
+      transform: scale(1.05);
+      background: #fff;
+    }
+    
+    /* Specific adjustments for Diet Guides Section Images */
+    #dietGuidesSection img {
+      width: 100%;
+      max-width: 400px;
+      display: block;
+      margin: 0 auto 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    /* Specific adjustments for Success Stories Section Images */
+    #successStoriesSection img {
+      width: 100%;
+      max-width: 400px;
+      display: block;
+      margin: 0 auto 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    /* Contact Section Styling */
+    #contactSection .contact-content {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+      animation: fadeIn 0.7s ease-out;
+    }
+    
+    #contactSection label {
+      display: block;
+      margin-top: 10px;
+    }
+    
+    #contactSection input,
+    #contactSection textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    #contactSection button[type="submit"] {
+      margin-top: 15px;
+      padding: 0.8rem 1.5rem;
+      background: #ffd700;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+      transition: transform 0.3s;
+    }
+    
+    #contactSection button[type="submit"]:hover {
+      transform: scale(1.05);
+      background: #fff;
+    }
+    
+    /* ----------------------------------
+       RESPONSIVE DESIGN
+    ------------------------------------- */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      
+      #hero h2 {
+        font-size: 2rem;
+      }
+      
+      .post,
+      .category,
+      .tips {
+        flex: 1 1 45%;
+        margin: 1rem 0;
+      }
+      
+      .plan .plan-media {
+        flex-direction: column;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+      }
+      
+      .post,
+      .category,
+      .tips {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FIT & FIERCE</h1>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <!-- "Fitness Plans" link -->
+        <li><a href="#posts">Fitness Plans</a></li>
+        <!-- "Diet Guides" link -->
+        <li><a href="#categories">Diet Guides</a></li>
+        <!-- "Success Stories" link -->
+        <li><a href="#tips">Success Stories</a></li>
+        <!-- "Contact" link -->
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero">
+        <div class="hero-content">
+          <h2>Transform Your Life with Fitness!</h2>
+          <button id="startJourneyBtn">Start Your Journey</button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about">
+      <h2>About the Blog</h2>
+      <p>
+        Welcome to FIT &amp; FIERCE! This blog is dedicated to helping you achieve your fitness goals through workout routines, nutrition tips, and fitness motivation.
+      </p>
+    </section>
+    
+    <!-- Featured Blog Posts Section -->
+    <section id="posts">
+      <h2>Featured Blog Posts</h2>
+      <div class="posts">
+        <article class="post">
+          <img src="https://images.pexels.com/photos/30704303/pexels-photo-30704303/free-photo-of-intense-dumbbell-workout-in-comilla-gym.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Intense Dumbbell Workout" />
+          <h3>How to Start Your Fitness Journey</h3>
+          <p>
+            Starting your fitness journey can be overwhelming, but with the right mindset and approach, you can achieve your goals...
+          </p>
+          <button onclick="openExternalContent('https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/fitness/art-20048269')">Read More</button>
+        </article>
+        <article class="post">
+          <img src="https://t4.ftcdn.net/jpg/05/07/38/07/360_F_507380794_VlzuYm9RMjtOntCrV6lLEoHoFmEcvsRj.jpg" alt="Healthy Eating" />
+          <h3>Healthy Eating Tips</h3>
+          <p>
+            Nutrition plays a crucial role in your fitness journey. Here are some healthy eating tips to help you stay on track...
+          </p>
+          <button onclick="openExternalContent('https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/eight-tips-for-healthy-eating/')">Read More</button>
+        </article>
+        <article class="post">
+          <img src="https://www.living.fit/cdn/shop/articles/2024_assets_sqiare_35_89cd106e-7efa-48c8-80af-60ab44d94d25_750x.png?v=1724126838" alt="HIIT Workouts" />
+          <h3>Effective HIIT Workouts</h3>
+          <p>
+            High-Intensity Interval Training (HIIT) is a great way to burn fat and improve cardiovascular health...
+          </p>
+          <button onclick="openExternalContent('https://www.mensjournal.com/health-fitness/best-hiit-workouts#gid=ci02b8d10420292491&pid=1-burpee-interval-workout')">Read More</button>
+        </article>
+      </div>
+    </section>
+    
+    <!-- Workout Categories Section -->
+    <section id="categories">
+      <h2>Workout Categories</h2>
+      <div class="categories">
+        <article class="category">
+          <img src="https://simplifaster.com/wp-content/uploads/2018/02/Full-Squat.jpg" alt="Strength Training" />
+          <h3>Strength Training</h3>
+          <p>Build muscle and strength with our curated strength training articles.</p>
+          <button onclick="openExternalContent('https://www.healthdirect.gov.au/strength-training-for-beginners#:~:text=guides%20or%20coaches?-,What%20is%20strength%20training?,resistance%20bands')">Explore</button>
+        </article>
+        <article class="category">
+          <img src="https://images.shiksha.com/mediadata/images/articles/1690284718phpoWwdGe.jpeg" alt="Yoga" />
+          <h3>Yoga</h3>
+          <p>Find peace and flexibility with our yoga routines and tips.</p>
+          <button onclick="openExternalContent('https://www.medicalnewstoday.com/articles/286745')">Explore</button>
+        </article>
+        <article class="category">
+          <img src="https://www.crmcinc.org/wp-content/uploads/2019/08/woman-weight-loss.jpg" alt="Weight Loss" />
+          <h3>Weight Loss</h3>
+          <p>Effective weight loss strategies and workouts to help you shed pounds.</p>
+          <button onclick="openExternalContent('https://www.mayoclinic.org/healthy-lifestyle/weight-loss/in-depth/weight-loss/art-20047752#:~:text=It&#39;s%20a%20good%20idea%20to,too%20much%20without%20knowing%20it.')">Explore</button>
+        </article>
+      </div>
+    </section>
+    
+    <!-- Fitness Tips & Motivation Section -->
+    <section id="tips">
+      <h2>Fitness Tips & Motivation</h2>
+      <p>
+        Stay tuned for more inspiring tips and motivation to help you push through your fitness journey.
+      </p>
+    </section>
+    
+    <!-- Newsletter & Testimonials (Hidden) -->
+    <section id="newsletter">
+      <h2>Subscribe to Our Newsletter</h2>
+      <p>Get the latest fitness tips and updates right in your inbox.</p>
+      <form>
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+    <section id="testimonials">
+      <h2>What Our Readers Say</h2>
+      <div class="testimonial">
+        <p>"This blog has changed my life!"</p>
+        <cite>- A Happy Reader</cite>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Toggle Banner for External Windows -->
+  <div id="toggleModal">
+    <button id="closeExternalBtn">Return to Blog</button>
+  </div>
+  
+  <!-- Inline Fitness Plans Section -->
+  <div id="fitnessPlansSection">
+    <button class="return-btn" onclick="closeFitnessPlans()">Return to Blog</button>
+    <h1>Ultimate Fitness Plans for Every Goal</h1>
+    <!-- Plan 1: Beginner Fitness Plan -->
+    <div class="plan">
+      <div class="plan-media">
+        <img src="https://ravefitnessstudio.com/wp-content/uploads/2021/07/online-fitness-personal-training.jpg" alt="Beginner Fitness Plan">
+        <iframe src="https://www.youtube.com/embed/U9ENCvFf9yQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>1. Beginner Fitness Plan</h2>
+      <p><strong>Goal:</strong> Build stamina and basic strength</p>
+      <p><strong>📅 Duration:</strong> 4 weeks</p>
+      <p><strong>🔥 Workouts:</strong> Full-body, 3 times a week</p>
+      <p><strong>🍏 Diet Focus:</strong> Balanced meals with protein, carbs &amp; fats</p>
+      <h3>📝 Workout Routine:</h3>
+      <ul>
+        <li>Day 1: Cardio (30 min) + Bodyweight Strength (Squats, Push-ups)</li>
+        <li>Day 2: Rest or Light Yoga</li>
+        <li>Day 3: Strength Training (Dumbbells)</li>
+        <li>Day 4: Rest</li>
+        <li>Day 5: Core &amp; Flexibility</li>
+        <li>Day 6: Outdoor Activity (Walking, Cycling)</li>
+        <li>Day 7: Rest</li>
+      </ul>
+    </div>
+    
+    <!-- Plan 2: Weight Loss Plan -->
+    <div class="plan">
+      <div class="plan-media">
+        <img src="https://greenapplehealthcare.ca/wp-content/uploads/2019/12/Dont-Lose-Weight-Lose-FAT.jpg" alt="Weight Loss Plan">
+        <iframe src="https://www.youtube.com/embed/LCyECbA3pUw" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>2. Weight Loss Plan</h2>
+      <p><strong>Goal:</strong> Burn fat &amp; improve endurance</p>
+      <p><strong>📅 Duration:</strong> 8 weeks</p>
+      <p><strong>🔥 Workouts:</strong> 5 times a week</p>
+      <p><strong>🍏 Diet Focus:</strong> Calorie deficit, high protein, low sugar</p>
+      <h3>📝 Workout Routine:</h3>
+      <ul>
+        <li>HIIT (High-Intensity Interval Training) 3x/week</li>
+        <li>Strength Training 2x/week</li>
+        <li>Daily Walks (10,000 steps target)</li>
+        <li>Healthy Diet: Lean proteins, greens, complex carbs</li>
+      </ul>
+    </div>
+    
+    <!-- Plan 3: Muscle Gain Plan -->
+    <div class="plan">
+      <div class="plan-media">
+        <img src="https://www.elitefitness.com.au/cdn/shop/articles/blog_-_4-week.png?v=1709890260&width=1024" alt="Muscle Gain Plan">
+        <iframe src="https://www.youtube.com/embed/lu_BObG6dj8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>3. Muscle Gain Plan</h2>
+      <p><strong>Goal:</strong> Build lean muscle mass</p>
+      <p><strong>📅 Duration:</strong> 12 weeks</p>
+      <p><strong>🔥 Workouts:</strong> 4-5 days a week</p>
+      <p><strong>🍏 Diet Focus:</strong> High protein, surplus calories</p>
+      <h3>📝 Workout Routine:</h3>
+      <ul>
+        <li>Day 1: Chest &amp; Triceps</li>
+        <li>Day 2: Back &amp; Biceps</li>
+        <li>Day 3: Rest</li>
+        <li>Day 4: Legs &amp; Core</li>
+        <li>Day 5: Shoulders &amp; Arms</li>
+        <li>Day 6: Active Recovery</li>
+        <li>Day 7: Rest</li>
+      </ul>
+      <p><strong>💡 Tip:</strong> Progressive overload is key—increase weights gradually.</p>
+    </div>
+    
+    <!-- Plan 4: Home Workout Plan -->
+    <div class="plan">
+      <div class="plan-media">
+        <img src="https://www.aroleap.com/cdn/shop/articles/pexels-pixabay-416778.jpg?v=1737450434&width=1100" alt="Home Workout Plan">
+        <iframe src="https://www.youtube.com/embed/88h-BI7fPQA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>4. Home Workout Plan</h2>
+      <p><strong>Goal:</strong> Stay fit with minimal equipment</p>
+      <p><strong>📅 Duration:</strong> 6 weeks</p>
+      <p><strong>🔥 Workouts:</strong> 4-5 days a week</p>
+      <p><strong>🍏 Diet Focus:</strong> Clean eating, home-cooked meals</p>
+      <h3>📝 Workout Routine:</h3>
+      <ul>
+        <li>Bodyweight exercises (Push-ups, Squats, Lunges, Planks)</li>
+        <li>Resistance bands for strength training</li>
+        <li>Cardio (Jump rope, Burpees, Mountain climbers)</li>
+      </ul>
+    </div>
+    
+    <!-- Plan 5: Full-Body Flexibility Plan -->
+    <div class="plan">
+      <div class="plan-media">
+        <img src="https://i.ytimg.com/vi/9X-4dGjcIcQ/sddefault.jpg" alt="Full-Body Flexibility Plan">
+        <iframe src="https://www.youtube.com/embed/lPKRiU9u_Hc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>5. Full-Body Flexibility Plan</h2>
+      <p><strong>Goal:</strong> Improve mobility &amp; prevent injuries</p>
+      <p><strong>📅 Duration:</strong> 4 weeks</p>
+      <p><strong>🔥 Workouts:</strong> 3-4 days a week</p>
+      <p><strong>🍏 Diet Focus:</strong> Hydration &amp; anti-inflammatory foods</p>
+      <h3>📝 Workout Routine:</h3>
+      <ul>
+        <li>Dynamic stretching before workouts</li>
+        <li>Yoga &amp; Pilates sessions</li>
+        <li>Foam rolling &amp; breathing exercises</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Inline Diet Guides Section -->
+  <div id="dietGuidesSection">
+    <button class="return-btn" onclick="closeDietGuides()">Return to Blog</button>
+    <h1>Ultimate Diet Guides for Every Fitness Goal</h1>
+    
+    <!-- Diet Guide 1: Balanced Diet Guide -->
+    <div class="plan">
+      <div class="plan-media">
+        <img src="https://www.chp.gov.hk/files/jpg/adult_eng.jpg" alt="Balanced Diet Guide">
+        <iframe src="https://www.youtube.com/embed/81G22t2UHxA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>1. Balanced Diet Guide</h2>
+      <p><strong>Goal:</strong> Maintain overall health with essential nutrients</p>
+      <p><strong>Key Nutrients:</strong> Protein (Chicken, Lentils, Eggs), Carbs (Whole Grains, Fruits, Vegetables), Fats (Avocado, Nuts, Olive Oil)</p>
+      <h3>Daily Meal Plan:</h3>
+      <ul>
+        <li>Breakfast: Oats with Fruits &amp; Nuts</li>
+        <li>Lunch: Brown Rice, Grilled Chicken &amp; Vegetables</li>
+        <li>Dinner: Quinoa Salad with Lean Protein</li>
+        <li>Snacks: Greek Yogurt, Mixed Nuts</li>
+      </ul>
+    </div>
+    
+    <!-- Diet Guide 2: Weight Loss Diet Plan -->
+    <div class="plan">
+      <div class="plan-media">
+        <img src="https://www.fitterfly.com/blog/wp-content/uploads/2024/05/Get-Results-with-This-Step-by-Step-Diet-Plan-for-Weight-Loss-1200x675.webp" alt="Weight Loss Diet Plan">
+        <iframe src="https://www.youtube.com/embed/LCyECbA3pUw" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>2. Weight Loss Diet Plan</h2>
+      <p><strong>Goal:</strong> Reduce body fat while maintaining muscle</p>
+      <p><strong>Focus:</strong> Calorie deficit, high protein, fiber-rich foods</p>
+      <h3>Daily Meal Plan:</h3>
+      <ul>
+        <li>Breakfast: Scrambled Eggs &amp; Avocado Toast</li>
+        <li>Lunch: Grilled Salmon &amp; Quinoa Bowl</li>
+        <li>Dinner: Stir-fried Vegetables with Tofu</li>
+        <li>Snacks: Green Smoothie, Almonds</li>
+      </ul>
+      <p><strong>Tip:</strong> Avoid processed sugar and drink at least 2-3 liters of water daily.</p>
+    </div>
+    
+    <!-- Diet Guide 3: Muscle Gain Diet Plan -->
+    <div class="plan">
+      <div class="plan-media">
+        <img src="https://getmymettle.com/cdn/shop/articles/blog-28-feb.jpg?v=1646032903&width=1000" alt="Muscle Gain Diet Plan">
+        <iframe src="https://www.youtube.com/embed/osqvOUJjaCo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>3. Muscle Gain Diet Plan</h2>
+      <p><strong>Goal:</strong> Build lean muscle mass</p>
+      <p><strong>Focus:</strong> Calorie surplus, high protein, nutrient-dense foods</p>
+      <h3>Daily Meal Plan:</h3>
+      <ul>
+        <li>Breakfast: Protein Smoothie (Banana, Whey, Peanut Butter)</li>
+        <li>Lunch: Brown Rice, Chicken Breast, Steamed Vegetables</li>
+        <li>Dinner: Grilled Fish, Sweet Potato, Leafy Greens</li>
+        <li>Snacks: Greek Yogurt, Protein Bars, Boiled Eggs</li>
+      </ul>
+      <p><strong>Tip:</strong> Eat every 2-3 hours to support muscle recovery.</p>
+    </div>
+    
+    <!-- Diet Guide 4: Vegetarian Diet Plan -->
+    <div class="plan">
+      <div class="plan-media">
+        <img src="https://media.post.rvohealth.io/wp-content/uploads/2020/08/vegetarian-diet-plan-1200x628-facebook-1200x628.jpg" alt="Vegetarian Diet Plan">
+        <iframe src="https://www.youtube.com/embed/EJjCy6vZoFI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>4. Vegetarian Diet Plan</h2>
+      <p><strong>Goal:</strong> Stay fit with a plant-based diet</p>
+      <p><strong>Focus:</strong> High protein from plant sources</p>
+      <h3>Daily Meal Plan:</h3>
+      <ul>
+        <li>Breakfast: Smoothie Bowl with Nuts &amp; Seeds</li>
+        <li>Lunch: Chickpea Salad &amp; Whole Wheat Bread</li>
+        <li>Dinner: Stir-fried Tofu with Brown Rice</li>
+        <li>Snacks: Roasted Nuts, Hummus with Carrots</li>
+      </ul>
+      <p><strong>Tip:</strong> Include B12 &amp; Iron-rich foods like spinach, nuts, and fortified cereals.</p>
+    </div>
+    
+    <!-- Diet Guide 5: Keto Diet Plan -->
+    <div class="plan">
+      <div class="plan-media">
+        <img src="https://skalefitness.com/wp-content/uploads/2022/08/Kito-Dite-for-Indian.webp" alt="Keto Diet Plan">
+        <iframe src="https://www.youtube.com/embed/lddvPqgnZ_A" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>5. Keto Diet Plan</h2>
+      <p><strong>Goal:</strong> Burn fat using low-carb, high-fat meals</p>
+      <p><strong>Focus:</strong> Reduce carbs, increase healthy fats</p>
+      <h3>Daily Meal Plan:</h3>
+      <ul>
+        <li>Breakfast: Scrambled Eggs with Avocado</li>
+        <li>Lunch: Grilled Chicken with Leafy Greens</li>
+        <li>Dinner: Salmon with Buttered Asparagus</li>
+        <li>Snacks: Cheese, Nuts, Keto Bars</li>
+      </ul>
+      <p><strong>Tip:</strong> Keep carb intake below 50g per day for best results.</p>
+    </div>
+  </div>
+  
+  <!-- Inline Success Stories Section -->
+  <div id="successStoriesSection">
+    <button class="return-btn" onclick="closeSuccessStories()">Return to Blog</button>
+    <h1>🏆 Inspiring Fitness Success Stories</h1>
+    
+    <!-- Success Story 1: Sarah’s Journey -->
+    <div class="plan">
+      <div class="plan-media">
+        <img src="https://s.abcnews.com/images/Lifestyle/ABC-jj_before_after_as_160114_16x9_992.jpg" alt="Sarah’s Journey">
+        <iframe src="https://www.youtube.com/embed/-esxNaQZHGg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>From Overweight to Fit: Sarah’s Journey</h2>
+      <p><strong>Goal:</strong> Weight Loss (Lost 30kg in 6 months)</p>
+      <p><strong>Challenges:</strong> Emotional eating, low energy, no motivation</p>
+      <p><strong>Solution:</strong> Personalized workout &amp; balanced diet</p>
+      <h3>Plan:</h3>
+      <ul>
+        <li>Started with walking &amp; light workouts</li>
+        <li>Switched to a high-protein, low-carb diet</li>
+        <li>Progressed to strength training &amp; HIIT</li>
+      </ul>
+      <p><strong>Sarah’s Words:</strong></p>
+      <blockquote>"I never thought I’d lose 30kg, but staying consistent changed my life!"</blockquote>
+    </div>
+    
+    <!-- Success Story 2: Jake’s Story -->
+    <div class="plan">
+      <div class="plan-media">
+        <img src="https://bonytobeastly.com/wp-content/uploads/2024/07/skinny-and-strong-before-and-after.jpg" alt="Jake’s Story">
+        <iframe src="https://www.youtube.com/embed/DKAUfcSSBzw" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>Skinny to Strong: Jake’s Muscle Gain Story</h2>
+      <p><strong>Goal:</strong> Build Muscle (Gained 15kg of lean muscle in 1 year)</p>
+      <p><strong>Challenges:</strong> Struggled to gain weight, low appetite</p>
+      <p><strong>Solution:</strong> Strength training + calorie surplus diet</p>
+      <h3>Plan:</h3>
+      <ul>
+        <li>Increased protein intake (chicken, eggs, whey)</li>
+        <li>Followed a structured weightlifting plan</li>
+        <li>Maintained a daily calorie surplus</li>
+      </ul>
+      <p><strong>Jake’s Words:</strong></p>
+      <blockquote>"Hard work in the gym and proper nutrition made the impossible possible!"</blockquote>
+    </div>
+    
+    <!-- Success Story 3: Emily’s Comeback -->
+    <div class="plan">
+      <div class="plan-media">
+        <img src="https://mrskfit.com/wp-content/uploads/2021/01/35c5cbde-31d7-4f40-9f71-2967a1f0f896.jpeg?w=810" alt="Emily’s Comeback">
+        <iframe src="https://www.youtube.com/embed/w-E3GNzYUYI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>Post-Pregnancy Transformation: Emily’s Fitness Comeback</h2>
+      <p><strong>Goal:</strong> Get back in shape after pregnancy</p>
+      <p><strong>Challenges:</strong> Lack of time, postpartum fatigue</p>
+      <p><strong>Solution:</strong> Home workouts + mindful eating</p>
+      <h3>Plan:</h3>
+      <ul>
+        <li>Started with yoga &amp; bodyweight exercises</li>
+        <li>Focused on clean eating &amp; hydration</li>
+        <li>Included resistance training for toning</li>
+      </ul>
+      <p><strong>Emily’s Words:</strong></p>
+      <blockquote>"As a mom, I prioritized my health, and now I feel stronger than ever!"</blockquote>
+    </div>
+    
+    <!-- Success Story 4: Raj’s Health Revolution -->
+    <div class="plan">
+      <div class="plan-media">
+        <img src="https://media.licdn.com/dms/image/v2/D4D12AQHLPV-7DeW5Kg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1666417396209?e=2147483647&v=beta&t=7wRs_34_p3jYSXT7rabeLJeGZ_M272jvddudIqVBSZY" alt="Raj’s Health Revolution">
+        <iframe src="https://www.youtube.com/embed/CvTZwy5T_Bs" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>Beating Diabetes with Fitness: Raj’s Health Revolution</h2>
+      <p><strong>Goal:</strong> Reverse Type 2 Diabetes with exercise &amp; diet</p>
+      <p><strong>Challenges:</strong> High blood sugar, sedentary lifestyle</p>
+      <p><strong>Solution:</strong> Daily walks + controlled diet</p>
+      <h3>Plan:</h3>
+      <ul>
+        <li>Started daily 10,000-step challenge</li>
+        <li>Followed a low-carb, fiber-rich diet</li>
+        <li>Lost 20kg &amp; reduced sugar levels naturally</li>
+      </ul>
+      <p><strong>Raj’s Words:</strong></p>
+      <blockquote>"Fitness saved my life—I no longer need medication"</blockquote>
+    </div>
+    
+    <!-- Success Story 5: Chris’s Story -->
+    <div class="plan">
+      <div class="plan-media">
+        <img src="https://www.backfitpro.com/wp-content/uploads/2017/08/Gift-of-Injury.jpg" alt="Chris’s Story">
+        <iframe src="https://www.youtube.com/embed/e1-XuNTOZTE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h2>From Injury to Comeback: Chris’s Story</h2>
+      <p><strong>Goal:</strong> Recover from a sports injury &amp; regain strength</p>
+      <p><strong>Challenges:</strong> Knee surgery, low confidence</p>
+      <p><strong>Solution:</strong> Physiotherapy + customized training</p>
+      <h3>Plan:</h3>
+      <ul>
+        <li>Focused on mobility &amp; stretching exercises</li>
+        <li>Gradually added strength training</li>
+        <li>Maintained an anti-inflammatory diet</li>
+      </ul>
+      <p><strong>Chris’s Words:</strong></p>
+      <blockquote>"I thought my fitness journey was over, but now I’m stronger than ever!"</blockquote>
+    </div>
+  </div>
+  
+  <!-- Inline Contact Section -->
+  <div id="contactSection">
+    <button class="return-btn" onclick="closeContactSection()">Return to Blog</button>
+    <h1>📞 Contact Us &amp; Get in Touch</h1>
+    <div class="contact-content">
+      <p>We’d love to hear from you! Whether you have fitness-related questions, need guidance, or want to share your fitness journey, feel free to reach out.</p>
+      
+      <h3>📍 Contact Information</h3>
+      <p>📧 Email: <a href="mailto:mohankoduru064@gmail.com" style="color:#ffd700;">mohankoduru064@gmail.com</a></p>
+      <p>📞 Phone: 8639033832</p>
+      <p>📍 Address: LBRCE Mylavaram</p>
+      
+      <h3>📩 Contact Form</h3>
+      <form id="contactForm">
+        <label for="contactName">Name:</label>
+        <input type="text" id="contactName" name="contactName" placeholder="Your name" required />
+        
+        <label for="contactEmail">Email:</label>
+        <input type="email" id="contactEmail" name="contactEmail" placeholder="Your email" required />
+        
+        <label for="contactSubject">Subject:</label>
+        <input type="text" id="contactSubject" name="contactSubject" placeholder="Subject" required />
+        
+        <label for="contactMessage">Message:</label>
+        <textarea id="contactMessage" name="contactMessage" rows="4" placeholder="Your message" required></textarea>
+        
+        <button type="submit">Submit</button>
+      </form>
+      
+      <h3>📲 Follow Us on Social Media</h3>
+      <p>Stay connected with us for the latest fitness tips, workouts, and inspiration!</p>
+      <p>🔹 Instagram: <a href="https://www.instagram.com/mohankoduru" target="_blank" style="color:#ffd700;">@mohankoduru</a></p>
+      <p>🔹 Facebook: <a href="https://www.facebook.com/mohansai.koduru" target="_blank" style="color:#ffd700;">@mohansai koduru</a></p>
+      <p>🔹 Twitter: <a href="https://twitter.com/mohankoduru" target="_blank" style="color:#ffd700;">@mohankoduru</a></p>
+      <p>🔹 YouTube: <a href="https://www.youtube.com/channel/YourChannel" target="_blank" style="color:#ffd700;">kattupalli sudhakar</a></p>
+    </div>
+  </div>
+  
+  <script>
+    // Global variable for external windows.
+    let extWindow = null;
+    
+    // When "Start Your Journey" button is clicked, scroll to About.
+    document.getElementById("startJourneyBtn").addEventListener("click", function () {
+      window.location.hash = "#about";
+    });
+    
+    // Function to open external content for non-inline sections.
+    function openExternalContent(url) {
+      if (url === "fitness-plans.html") {
+        showFitnessPlans();
+      } else {
+        if (extWindow && !extWindow.closed) {
+          extWindow.close();
+        }
+        extWindow = window.open(url, "externalPage", "width=1000,height=800");
+        document.getElementById("toggleModal").style.display = "block";
+      }
+    }
+    
+    // Poll every second to hide the toggle banner if an external window is closed.
+    setInterval(function () {
+      if (extWindow && extWindow.closed) {
+        document.getElementById("toggleModal").style.display = "none";
+      }
+    }, 1000);
+    
+    // Bind event listeners to navigation links.
+    // Fitness Plans: index 2
+    document.querySelectorAll("nav ul li a")[2].addEventListener("click", function (e) {
+      e.preventDefault();
+      showFitnessPlans();
+    });
+    // Diet Guides: index 3
+    document.querySelectorAll("nav ul li a")[3].addEventListener("click", function (e) {
+      e.preventDefault();
+      showDietGuides();
+    });
+    // Success Stories: index 4
+    document.querySelectorAll("nav ul li a")[4].addEventListener("click", function (e) {
+      e.preventDefault();
+      showSuccessStories();
+    });
+    // Contact: index 5
+    document.querySelectorAll("nav ul li a")[5].addEventListener("click", function (e) {
+      e.preventDefault();
+      showContactSection();
+    });
+    
+    // Functions to show/hide inline overlays.
+    function showFitnessPlans() {
+      document.getElementById("fitnessPlansSection").style.display = "block";
+    }
+    
+    function closeFitnessPlans() {
+      document.getElementById("fitnessPlansSection").style.display = "none";
+    }
+    
+    function showDietGuides() {
+      document.getElementById("dietGuidesSection").style.display = "block";
+    }
+    
+    function closeDietGuides() {
+      document.getElementById("dietGuidesSection").style.display = "none";
+    }
+    
+    function showSuccessStories() {
+      document.getElementById("successStoriesSection").style.display = "block";
+    }
+    
+    function closeSuccessStories() {
+      document.getElementById("successStoriesSection").style.display = "none";
+    }
+    
+    function showContactSection() {
+      document.getElementById("contactSection").style.display = "block";
+    }
+    
+    function closeContactSection() {
+      document.getElementById("contactSection").style.display = "none";
+    }
+    
+    // Close external window toggle.
+    document.getElementById("closeExternalBtn").addEventListener("click", function () {
+      if (extWindow && !extWindow.closed) {
+        extWindow.close();
+      }
+      document.getElementById("toggleModal").style.display = "none";
+    });
+  </script>
+</body>
+</html>
